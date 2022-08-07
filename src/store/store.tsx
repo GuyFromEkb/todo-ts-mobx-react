@@ -1,8 +1,8 @@
 import { makeAutoObservable } from "mobx";
-import { IToDo } from "../interface";
+import { IToDo } from "../interface"
 
-const addTodo = (todos: IToDo[], newTodoText: string, id: number = Date.now(), complited: boolean = false): void => {
-    const newTodo: IToDo = { complited: complited, id: id, title: newTodoText }
+const addTodo = (todos: IToDo[], newTodoText: string): void => {
+    const newTodo: IToDo = { complited: false, id: Date.now(), title: newTodoText }
 
     todos.push(newTodo)
 }
@@ -14,15 +14,11 @@ const removeTodo = (todos: IToDo[], id: number): IToDo[] =>
     todos.filter((todo) => todo.id !== id)
 
 const showFilterTodo = (todos: IToDo[], activeFilter: string): IToDo[] => {
-
     switch (activeFilter) {
-
         case "COMPLITED":
             return todos.filter(item => item.complited)
-
         case "NOT_COMPLETED":
             return todos.filter(item => !item.complited)
-
         default:
             return todos
     }
@@ -30,10 +26,6 @@ const showFilterTodo = (todos: IToDo[], activeFilter: string): IToDo[] => {
 
 class Todos {
     todos: IToDo[] = []
-    // todos: IToDo[] = [
-    //     { id: 23, complited: true, title: "firstTodo" },
-    //     { id: 26, complited: false, title: "secondTodo" }
-    // ]
     activeFilter: string = ""
 
     constructor() {
@@ -44,26 +36,22 @@ class Todos {
         this.todos = removeTodo(this.todos, id);
     }
 
-    addTodo(newTodoText: string, id?: number, complited?: boolean) {
-        addTodo(this.todos, newTodoText, id, complited)
+    addTodo(newTodoText: string) {
+        addTodo(this.todos, newTodoText)
     }
 
     checkToDo(id: number) {
-        this.todos = checkToDo(this.todos, id)        
+        this.todos = checkToDo(this.todos, id)
     }
 
     addFilter(filter: string) {
         this.activeFilter = this.activeFilter === filter ? "" : filter
-        // this.activeFilter = filter
-        // console.log(this.activeFilter);
     }
 
     showToDo() {
         return showFilterTodo(this.todos, this.activeFilter)
     }
-
 }
-
 const store = new Todos();
 
 export default store;

@@ -1,4 +1,3 @@
-import './ToDoItem.scss'
 import { IToDo } from '../../interface'
 import store from '../../store/store'
 

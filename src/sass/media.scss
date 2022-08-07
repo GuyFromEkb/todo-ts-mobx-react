@@ -15,7 +15,6 @@
 	}
 	.collection .collection-item {
 		word-break: break-all;
-		// padding-right: 45px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -52,7 +51,6 @@
 		margin-top: 20px;
 		flex-direction: column;
 		gap: 5px;
-		// max-width: 80%;
 		align-items: center;
 		&__btn{
 			min-width: 180px;

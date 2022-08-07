@@ -18,8 +18,7 @@ const ToDoFilter: React.FC = () => {
             >
                 все
                 <i className="material-icons right">event_note</i>
-            </button>
-
+            </button>            
             <button
                 onClick={() => store.addFilter("COMPLITED")}
                 className={`filter__btn  btn-small ${store.activeFilter === "COMPLITED" ? "active" : ""}`}
@@ -27,7 +26,6 @@ const ToDoFilter: React.FC = () => {
                 выполненные
                 <i className="material-icons right">event_available</i>
             </button>
-
             <button
                 onClick={() => store.addFilter("NOT_COMPLETED")}
                 className={`filter__btn  btn-small ${store.activeFilter === "NOT_COMPLETED" ? "active" : ""}`}

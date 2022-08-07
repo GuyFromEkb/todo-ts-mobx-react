@@ -1,10 +1,9 @@
 import { observer } from 'mobx-react-lite'
 import store from '../../store/store'
 import ToDoItem from '../toDoItem/ToDoItem'
-import './toDolist.scss'
+import './ToDoList.scss'
 
 const ToDoList: React.FC = () => {
-
     const printItems = store.showToDo().map(item => <ToDoItem key={item.id} {...item} />)
 
     if (store.todos.length === 0)

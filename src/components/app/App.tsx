@@ -1,9 +1,9 @@
 
-import NavBar from '../navbar/navbar';
-import ToDoFilter from '../toDoFilter/ToDoFilter';
-import ToDoList from '../todoList/TodoList';
-import ToDoForm from '../toDoForm/ToDoForm';
-import '../../sass/media.scss';
+import NavBar from '../navbar/Navbar'
+import ToDoFilter from '../toDoFilter/ToDoFilter'
+import ToDoList from '../todoList/ToDoList'
+import ToDoForm from '../toDoForm/ToDoForm'
+import '../../sass/media.scss'
 
 function App() {
   return (
@@ -15,11 +15,10 @@ function App() {
         <ToDoList />
       </div>
     </>
-
-  );
+  )
 }
 
-export default App;
+export default App
 
 
 
