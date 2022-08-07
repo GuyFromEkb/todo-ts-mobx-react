@@ -1,0 +1,61 @@
+@media (max-width: 821px) {
+	.todo-form {
+		.validate {
+			width: 75% !important;
+		}
+		&__btn {
+			display: block;
+			width: 100px;
+		}
+	}
+	.filter {
+		display: flex;
+		gap: 0;
+		justify-content: space-between;
+	}
+	.collection .collection-item {
+		word-break: break-all;
+		// padding-right: 45px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.btn-small {
+		letter-spacing: normal;
+	}
+}
+@media (max-width: 576px) {
+	nav .brand-logo {
+		left: 0;
+		transform: none;
+	}
+	.todo-form {
+		padding-bottom: 45px;
+		.validate {
+			width: 100% !important;
+		}
+		&__btn {
+			top: 75px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: block;
+			width: 100px;
+			&:active {
+				transform: translateX(-50%) scale(1.015);
+			}
+		}
+		.input-field .helper-text {
+			position: absolute;
+		}
+	}
+	.filter {
+		margin-top: 20px;
+		flex-direction: column;
+		gap: 5px;
+		// max-width: 80%;
+		align-items: center;
+		&__btn{
+			min-width: 180px;
+		}
+	}
+}

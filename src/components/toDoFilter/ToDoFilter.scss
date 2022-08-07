@@ -1,0 +1,14 @@
+.filter {
+	display: flex;
+	gap: 40px;
+	.btn-small {
+		user-select: none;
+		background: #6a1b9a;
+		&:active {
+			transform: scale(1.015);
+		}
+	}
+	.btn-small.active {		
+		background: #8e24aa;
+	}
+}

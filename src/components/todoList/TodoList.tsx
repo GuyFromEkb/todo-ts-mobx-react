@@ -1,55 +1,21 @@
-
+import { observer } from 'mobx-react-lite'
+import store from '../../store/store'
+import ToDoItem from '../toDoItem/ToDoItem'
 import './toDolist.scss'
-import { IToDo } from '../../interface'
-
-// interface ToDoListProps {
-//     // toDoList: string[],
-//     // toDoList: any[],
-
-//     //Вопрос не обязательный параметр ?
-//     toDoList: IToDo[],
-//     onRemove(id: number): void,
-//     onChek(todoId: number): void
-// }
 
 const ToDoList: React.FC = () => {
 
+    const printItems = store.showToDo().map(item => <ToDoItem key={item.id} {...item} />)
 
-
-
-
-    // if (toDoItem.length === 0)
-    //     return (
-    //         <h5 className='center' >Список дел пуст!</h5>
-    //     )
-
-    // return (
-    //     <ul className="collection">
-    //         {toDoItem}
-    //     </ul>
-    // )
+    if (store.todos.length === 0)
+        return (
+            <h5 className='center empty-to-do' >Список дел пуст!</h5>
+        )
     return (
-        <ul className="collection">
-            <li
-                className="collection-item">
-                <label>
-                    <input
-                        // onChange={() => onChek(id)}
-                        // checked={complited}
-                        type="checkbox" />
-                    <span
-                    // className={complited ? 'complited' : ''}
-                    >
-                        {"title"}
-                    </span>
-                </label>
-                <i
-                    // onClick={() => onRemove(id)}
-                    className="material-icons"
-                > delete_forever </i>
-            </li>
+        <ul style={printItems.length > 0 ? {} : { borderBottom: 0 }} className="collection">
+            {printItems}
         </ul>
     )
 }
 
-export default ToDoList
+export default observer(ToDoList)

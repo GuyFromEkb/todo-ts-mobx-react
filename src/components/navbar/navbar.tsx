@@ -3,7 +3,7 @@ const NavBar: React.FC = () => {
         <nav>
             <div className="nav-wrapper purple darken-3 p1x">
                 <div className="brand-logo">
-                    React + TypeScript
+                    To-Do List
                 </div>
             </div>
         </nav>
